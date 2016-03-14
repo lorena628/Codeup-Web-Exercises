@@ -1,0 +1,34 @@
+.header {
+	color: red;
+	text-decoration: underline;
+	font-size: 30px;
+	font-style: italic;
+}
+body {
+	background-image: url(/img/sky.jpeg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	color: #301D38;
+	text-align: center;
+	font-size: 1.6em;	
+}
+ul {
+	list-style: square;
+	list-style-position: inside;
+}
+ol {
+	list-style-position: inside;
+}
+table {
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+}
+td {
+	border: 1px solid black;
+}
+tr:nth-child(even){background-color: #454429}
+tr:nth-child(odd){background-color: #91972A}
+th {
+	background-color: #AA6DA3
+}
