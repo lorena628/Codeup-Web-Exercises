@@ -1,0 +1,61 @@
+    h1 {
+    margin-left: 190px;
+    font-family: 'Chewy', cursive;
+    font-size: 70px;
+    color: #47310A;   
+    padding-top: 30px;
+}
+body{
+    background-image: url(/img/retro_tv.jpg);
+    background-size: 100% 100%;
+
+}
+table {
+    font-family: 'Didact Gothic', sans-serif;
+    border-style: solid;
+    border-color: #4A2F0A;
+    border-width: 5px;
+    border-collapse: collapse;
+    margin-left: 185px;
+    margin-bottom: 120px;
+    padding-top: 90px;
+}
+td{
+    
+    border-style: dotted;
+    text-align: center;
+    height: 60px;
+}
+th {
+    font-size: 150%;
+    border-style: dotted;
+    border-color: #4A2F0A;
+    height: 30px;
+    width: 80px;
+}
+#chan   {
+    text-align: center;
+}
+.com {
+    color: #DB1838;
+    font-weight: bold;
+}
+.com:hover{
+    color: #000000;
+}     
+.dram {
+    color: #0971B2;
+    font-weight: bold;
+}
+.dram:hover{
+    color: #FF11AF;
+}
+.sports{
+    color: #007521;
+    font-weight: bold;
+}
+.sports:hover{
+    color: #FF6F31;
+}
+
+
