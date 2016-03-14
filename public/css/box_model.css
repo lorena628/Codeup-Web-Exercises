@@ -1,0 +1,64 @@
+body {
+   background-color: rgb(219, 255, 213);
+}   
+
+
+h1 {
+    text-decoration: underline;
+    color: #800080;
+}
+
+
+.box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin-right: 50px;
+    margin-top:25px;
+    margin-bottom:25px;
+    padding:10px;
+    color: #ffffff;
+    float: left;
+}
+.red {
+    background-color: red;
+   
+}
+.orange {
+    background-color: rgb(255, 94, 13);
+
+    
+}
+.yellow {
+    background-color: rgb(255, 252, 42);
+  
+}
+.green {
+    background-color: rgb(6, 188, 4);
+    clear: left;
+    
+}
+.blue {
+    background-color: rgb(23, 12, 228);
+   
+}
+.purple {
+    background-color: rgb(101, 2, 125);
+   
+}
+.box img {
+    position: relative;
+    top: -85px;
+    right: -40px;
+}
+
+img{
+    position: absolute;
+    right: 0%    
+}
+
+img{
+    position: absolute;
+    top:0%;    
+
+}
