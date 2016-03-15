@@ -1,0 +1,26 @@
+/*  
+this is loc in "site.css"
+in directory named "css" in web root
+*/
+
+.fancy-header {
+    color: blue;
+    text-decoration: underline;
+}
+#header-one {
+    color: red;
+    text-decoration: underline;
+    font-size: 120px;
+}
+#paragraph1 {
+        color: orange;
+}
+/********************/
+
+#header {
+    text-decoration-color: red;
+    text-decoration: underline;
+    font-size: 30px;
+}
+   
+
