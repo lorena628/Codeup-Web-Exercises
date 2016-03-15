@@ -1,0 +1,20 @@
+body {
+    background-color: #F9D1B3;
+    
+}
+
+#container {
+    text-align: center;
+    font-size: 20px;
+}
+
+#header {
+    font-size: .90em;
+ }   
+.heading {
+    text-decoration: underline;
+}
+
+#content {
+    font-size: .75em
+}
