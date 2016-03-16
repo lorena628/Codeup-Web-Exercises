@@ -39,5 +39,5 @@ if ( color == "orange" ) {
 // my favorite then we give it the output of it not being our favorite color. also a message variable is created so
 // the message can now be displayed
 //  
-var message = color + ((color == favorite) ? "This is my favorite color!!!":"This is not my favorite color");
+var message = (color == favorite) ? "This is my favorite color!!!" : "This is not my favorite color";
 console.log(message);
