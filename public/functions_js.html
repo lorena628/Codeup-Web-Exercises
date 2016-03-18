@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name odd/even</title>
+</head>
+<body>
+<script type="text/javascript">
+ "use strict";
+
+
+function sayHello ( randomName ) {
+    console.log("Hello from " + randomName + " !");
+}
+
+var myNameIs = 'Lorena'; //ask if var is supposed to be in parameter
+sayHello(myNameIs);
+
+// todo: Call the function 'sayHello' passing the variable 'myNameIs' as a parameter.
+
+
+
+
+
+
+// do not worry about the details of this line
+// just know that it generates a random number between 1 and 100
+var random = Math.floor((Math.random()*100)+1);
+
+
+function isOdd(random) {
+}
+
+var message = ((random % 2 != 0 ) ? " is an odd number" : " is not an odd number" );
+console.log(random + message);
+// Create a function called 'isOdd' that takes a number as a parameter.
+// The function should use the ternary operator to log a message.
+// The log should tell the number passed in and whether it is odd or not.
+
+// todo: Call the function 'isOdd' passing the variable 'random' as a parameter.
+isOdd(random);
+
+
+
+
+//sayHello ("Lorena");
+//sayHello ("Marie");
+//sayHello ("Jane");
+//sayHello ("Jo");
+
+
+
+
+
+</script>
+</body>
+</html>
