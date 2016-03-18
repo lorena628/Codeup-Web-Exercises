@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Splitting and joining an array</title>
+</head>
+<body>
+<script type="text/javascript">
+(function(){
+'use strict'
+
+
+var names = [
+    "Marcus",
+    "Matthew",
+    "Allen",
+    "Bobbie", 
+    "Lorena",
+    "Pancho",
+    "James",
+    "Nicki"
+];
+
+var nameString = names.join("| "); //join takes in a value and sticks what you want btwn element
+console.log(nameString);
+
+
+var splitNames = nameString.split(" "); //this splits the space after the join
+console.log(splitNames); 
+
+
+})();  
+</script>
+</body>
+</html>
