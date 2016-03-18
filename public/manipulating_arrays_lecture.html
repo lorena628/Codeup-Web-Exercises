@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>manipulating lecture</title>
+</head>
+<body>
+<script type="text/javascript">
+(function(){
+'use strict'
+
+var names = [
+    "Marcus",
+    "Matthew,",
+    "Allen",
+    "Bobbie", 
+    "Lorena",
+    "Pancho",
+    "James",
+    "Nicki"
+];
+
+console.log (names); //shows original
+
+names.push("Kristen", "Micah"); // this adds an element to array, suggested to push one at a time
+
+console.log(names); // shows with push
+
+
+var oldNames = names.pop(); //takes off the newest pushed item or last element
+console.log(names); 
+console.log(oldNames); 
+
+names.unshift(oldNames); //last element that was popped off will move to the beginning of array
+
+console.log(names);
+
+
+var anotherNames = names.shift(); //moves to the END of an array
+console.log(names);
+console.log(anotherNames);
+
+
+
+//var lorenaIndex = names.indexOf("Lorena"); 
+//console.log("Lorena was at the index " + lorenaIndex);    //output of 4 in array
+
+
+//console.log(names.indexOf("Cam"));    //not in the array so output is -1 
+
+//names.reverse();
+//names.push(oldNames);   //can go before or after names.reverse()
+//console.log(names);     //reverses order of the array
+
+//names.sort();   
+//console.log(names);   //sorts them alpha or numeric **sorting is case sensitive**
+
+
+
+// splicing 
+//
+//
+//
+var yetAnotherNames = names.splice(5, 3);
+console.log(names);
+console.log(yetAnotherNames);
+
+
+//names.push(yetAnotherNames);    
+//console.log(names); // adds spliced elements to the end of the array but with another dimension of array which is what we dont 
+// want
+
+yetAnotherNames.forEach(function(newName) {
+    names.push(newName);   // pushes each element at a time to the end of the array 
+});
+
+
+names.splice(3, 0, "Jared", "Alex", "Daniel");      //starts at Bobbie but dont want to remove any elements instead ADDING 3 MORE
+//ELEMENTS IN FRONT OF BOBBIE
+console.log(names);
+
+names.splice(4, 2, "Rachel", "Andrew");
+console.log(names);    // replace index 4 and 5 with 2 new names being Rachel and Andrew
+
+
+
+
+
+})();  
+</script>
+</body>
+</html>
