@@ -26,27 +26,43 @@
 
 
         // declare and initialize array
-    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+    //var shapes = ['square', 'rectangle', 'circle', 'triangle'];
 
         // There are 4 shapes in the array
-    console.log('There are ' + shapes.length + ' shapes in the array');
+    //console.log('There are ' + shapes.length + ' shapes in the array');
 
         // The first shape is: square
-    console.log('The first shape is: ' + shapes[0]);
+    //console.log('The first shape is: ' + shapes[0]);
 
         // The second shape is: rectangle
-    console.log('The second shape is: ' + shapes[1]);
+    //console.log('The second shape is: ' + shapes[1]);
 
         // The third shape is: circle
-    console.log('The third shape is: ' + shapes[2]);
+    //console.log('The third shape is: ' + shapes[2]);
 
         // The fourth shape is: triangle
-    console.log('The fourth shape is: ' + shapes[3]);
+    //console.log('The fourth shape is: ' + shapes[3]);
 
         // The fifth shape is: undefined
-    console.log('The fifth shape is: ' + shapes[4]); 
+    //console.log('The fifth shape is: ' + shapes[4]); 
 
 
+
+        //for looop will put out console.log for each element in array
+    for (var i = 0; i < shapes.length; i++) {
+    console.log('The shape at index ' + i + ' is: ' + shapes[i]);
+    }
+
+
+    //for-each loop iteration
+         // declare and initialize array
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+    // loop through the array and log the values
+    shapes.forEach(function (element, index, array) {
+        // element is the shape name
+        // index is the iterator
+        // array is the shapes array itself
+        console.log('The shape at index ' + index + ' is: ' + element);   
 
 
 
