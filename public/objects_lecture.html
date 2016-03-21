@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lecture for objects</title>
+</head>
+<body>
+<script type="text/javascript">
+
+(function(){
+'use strict'
+                    // ***** object is a collection of variables/functions/data etc.
+                    // property is variable inside an object *****
+
+
+    var car = new Object(); //not widely used
+    var car = {}; //this can be used to make an object, more used
+    console.log(typeof car);
+
+
+
+    var car = {};
+    // use dot notation to assign a "make" property
+    car.make = "Toyota";
+    // use array notation to assign a "model" property
+    car['model'] = "Camry";
+    console.log(car);
+
+
+
+    var what = 'color'; 
+    car.color = "gray";
+    car.year = '2001';
+    car.type = 'sedan';
+    console.log(car.year);
+    console.log(car['color']); //this can also be used and will output similar ar to console.log(car.year)...can be used //  though if user 
+    console.log(car[what]); //this will output what color this is 
+
+        //create a honk method on the car object
+    car.honk = function () {
+    alert('Honk! Honk!');
+    };
+
+        //honk the horn
+    car.honk();
+
+        // create a logMakeModel method on the car object
+    car.logMakeModel = function () {
+        console.log('Car make/model is: ' + this.make + ' ' + this.model);
+    };
+
+    // log the make/model
+    car.logMakeModel();
+
+
+
+
+
+
+    // *************************** example **********************************
+    // var player_name = prompt("What is your name?");
+
+        // create empty object
+    // var player1 = {};
+
+        // create properties (variables)
+    // var player_1.name = "player_name";
+    // var.player_1.power = 100;
+    // var.player_1.speed = 100;
+    // var.player_1.stamina = 20;
+    // var.player_1.defense = 20;
+
+        // create methods (functions)
+    // player_1.intro = function() {
+    //     console.log("hello " + this.name);
+    //     console.log("we are being attacked and we need your help");
+    // }
+    // player_1.attack = function() {
+    //         console.log("atacking");
+    // }
+
+    // player_1.run = function() {
+    //     console.log("running");
+    // }
+
+    // player_1.injured = function() {
+    //     this.power--;
+    // }
+
+    // player_1.showPower = function() {
+    //     console.log(this.power);
+    // }
+
+
+
+
+
+
+})();   
+</script>
+</body>
+</html>
