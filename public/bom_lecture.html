@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>BOM</title>
+</head>
+<body>
+<script type="text/javascript">
+// (function(){
+'use strict'
+
+
+// setTimeout(function() {
+//     alert("Hi everybody!");
+// }, 3000); //wait 3000 miliseconds THEN run this function ONCE
+
+
+
+
+var count = 0; //this is an example for intervalID
+var intervalId = setInterval(function() {
+    alert("Hi everybody!");
+
+    if (count > 3) {
+        clearInterval(intervalId);
+    }
+
+    count++;
+}, 3000); //wait 3000 miliseconds THEN run this function repeatedly
+
+
+
+
+
+
+
+
+// function timeoutFunction() { 
+//     count++;
+//     alert("Timeout! " + count);
+
+//     if (count < 5) {
+//         anotherTimeout = setTimeout(timeoutFunction, 5000);
+//     }
+// }
+// var anotherTimeout = setTimeout(timeoutFunction, 5000);
+
+
+
+
+
+
+//})();   
+</script>
+</body>
+</html>
