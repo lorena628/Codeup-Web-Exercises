@@ -4,42 +4,117 @@
     <title>Konami Code</title>
 </head>
 <body>
-    <h1>Konami Code</h1>
+    <h1>Enter Konami Code Now:</h1>
+
+
+    <img src="/img/contra.gif" alt="Contra gif">
 
    
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
         "use strict";
-
-        $(document).keyup(function(event){
-            // console.log(event.keyCode);
-        });
-
-
-
-        $(document).ready(function() {
-            var keys = [];
-            var konami =  '38,38,40,40,37,39,37,39,66,65,13';
-            
-            $(document).keydown(function(e) {
-                keys.push( e.keyCode );
-                console.log(keys.toString());
-                if (keys.toString().indexOf(konami) >= 0 ){  
-                    alert("you get 30 lives!");
-                    keys =[];
+        var keys = {
+            up:    38,
+            down:  40,
+            left:  37,
+            right: 39,
+            a:     65,
+            b:     66,
+            enter: 13
+        };
+        var sequence = [
+            keys.up,
+            keys.up,
+            keys.down,
+            keys.down,
+            keys.left,
+            keys.right,
+            keys.left,
+            keys.right,
+            keys.b,
+            keys.a,
+            keys.enter
+        ];
+        var keyIndex = 0;
+        $("body").keydown(function(e) {
+            var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+            if (charCode == sequence[keyIndex]) {
+                console.log("hit: " + charCode);
+                keyIndex++;
+                if (keyIndex == sequence.length) {
+                    alert("You Win");
+                    keyIndex = 0;
                 }
-                
-            })
+            } else {
+                console.log("miss: " + charCode);
+                keyIndex = 0;
+            };
         });
+
+
+
+subl /etc/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//the following is my original code
+
+        // $(document).keyup(function(event){
+        //             // console.log(event.keyCode);
+        //         });
+
+
+                        // $(document).ready(function() {
+                        //     $('body').css('background-color', 'black');
+                        // });     
+                        //dont worry too much about this ****************
+
+        // $(document).ready(function() {
+        //     $('h1').css('color', 'purple');
+        // });
+
+        // $(document).ready(function() {
+        //     var keys = [];
+        //     var konami =  '38,38,40,40,37,39,37,39,66,65,13';
+            
+        //     $(document).keydown(function(e) {
+        //         keys.push( e.keyCode );
+        //         console.log(keys.toString());
+        //         if (keys.toString().indexOf(konami) >= 0 ){
+              
+        //             $('body').css("background","url(/img/dancing_baby.gif)"
+        //         );
+        //             keys =[];
+        //         }
+                
+        //     })
+        // });
         
-
-
-
-
-
-
-
-
 
 
     </script>
@@ -51,20 +126,5 @@
 
 
 
-<!-- 
-var $p = $("p");
-
-    $p.click(function() {
-    $("p").css({
-        'background-color': 'purple',
-        'font-size': '24px'
-    })
-});
-
-
-        $(document).ready(function() {
-            $('#textfield').keydown(function() 
-                console.log(event.keycode);
-        }); -->
 
 

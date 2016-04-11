@@ -10,17 +10,37 @@
 
 
 
-    var movies = ['','Forrest Gump', 'The Devil Wears Prada', 'Clueless', 'Mean Girls', 'TDKR', 'The Illusionist', 'SW VII', 'Cheetah Girls', 'The Notebook', 'Amadeus']
+    var favoriteMovies = ['','Forrest Gump', 'The Devil Wears Prada', 'Clueless', 'Mean Girls', 'TDKR', 'The Illusionist', 'SW VII', 'Cheetah Girls', 'The Notebook', 'Amadeus'];
+        
+        console.log('My favorite movies are: ');
 
-         console.log('My favorite movies are: ');
+    //for (var i = 1; i < favoriteMovies.length; i++) {
+    //    if (i == 8) {
+    //        console.log(i + ' ' + favoriteMovies[i] + " !!!THIS IS MY FAVORITE MOVIE EVER!!!");
+    //        continue;
+    //    }
+    //    console.log( i + " " +  favoriteMovies[i]);
+    //}
 
-    for (var i = 1; i < movies.length; i++) {
-        if (i == 8) {
-            console.log(i + ' ' + movies[i] + " !!!THIS IS MY FAVORITE MOVIE EVER!!!");
-            continue;
-        }
-        console.log( i + " " +  movies[i]);
-    }
+            //hw     
+            favoriteMovies.sort();
+            var favIndex = favoriteMovies.indexOf("Cheetah Girls");
+            console.log("!!!THIS IS MY FAVORITE MOVIE EVER!!! " + favIndex);
+            favoriteMovies.splice(8, 0); 
+            favoriteMovies.unshift("Cheetah Girls");
+            // Put your favorite movie back in at the start of the array
+            // Repeat the above steps for your least favorite movie; put it at the end
+
+            // Create a function to console.log() your favorite movies.
+                // DO NOT VIOLATE SCOPE! Pass your favoriteMovies array in as a parameter
+                // Your function should output:
+                // "My all time favorite movie is [your favorite movie here]"
+                // "My least favorite movie is [your least favorite movie here]"
+                // "Some other movies are [the rest of the movies array with comma space between them]"
+                // You should not output any movies twice.
+
+
+
 
 
 

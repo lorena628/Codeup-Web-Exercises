@@ -1,7 +1,6 @@
 body {
     margin: auto;
     width: 60%;
-    padding: 10px;
     text-align: left;
 }
 input {
@@ -17,6 +16,9 @@ input {
 button {
     width: 4em;
     height: 5em;
+    padding: 1.5em;
+    margin-left: 3px;
+    margin-bottom: 4px;
     border-style: outset;
     border-width: 5px;
 }
