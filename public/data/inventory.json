@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Hammer",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    }, {
+        "title": "Drill",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "powered"
+        ],
+        "price": 100
+    }, {
+        "title": "Mower",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "gas",
+            "outdoor"
+        ],
+        "price": 200
+    }, {
+        "title": "Screwdrivers",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Nails",
+        "quantity": 80,
+        "categories": [
+            "tool",
+            "outdoor"
+        ],
+        "price": 3
+    }, {
+        "title": "Saw",
+        "quantity": 15,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    }, {
+        "title": "Powerwasher",
+        "quantity": 3,
+        "categories": [
+            "tool",
+            "outdoor",
+            "powered"
+        ],
+        "price": 200
+    }, {
+        "title": "Hardhat",
+        "quantity": 25,
+        "categories": [
+            "safety"
+        ],
+        "price": 16
+    }, {
+        "title": "Measuring Tape",
+        "quantity": 30,
+        "categories": [
+            "tool"
+        ],
+        "price": 4
+    }
+]
