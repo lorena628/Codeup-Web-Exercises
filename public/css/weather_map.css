@@ -1,0 +1,41 @@
+body{
+    /*background-image: url(/img/light-sky.jpeg);*/
+    font-family: 'Open Sans', sans-serif;
+}
+#title{
+    /*border-color: #A6B9BF;*/
+    /*border-style: solid;*/
+    /*background-color: #A6B9BF;*/
+    /*color: white;*/
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-image: url(/img/weather.gif);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+}
+#map-canvas {
+    width: 970px;
+    height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#map-background {
+    width: 1000px;
+    height: 410px;
+    padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #A6B9BF;
+}
+h1{
+    text-align: center;
+    font-size: 43px;
+}
+h3 {
+    text-align: center;
+}
+#weather-info {
+    text-align: center;
+    font-size: 13px;
+}
