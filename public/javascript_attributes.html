@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example jQuery Page</title>
+   <!--  <script src="/js/jquery.js"></script>
+    <script>
+        "use strict";
+
+        $(document).ready(function() {
+
+        });
+    </script> -->
+</head>
+<body>
+    <h1 id="codeup">Hello Codeup</h1>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        // (function(){
+        //     $('codeup').click(function() {
+        //         $().html();
+        //         var heading= $(this).html();
+        //         console.log(heading);
+        //     });
+        // }
+
+        (function(){
+            $('codeup').click(function() {
+                
+                var $this = $(this);
+
+                $this.html();
+                $this.css('backgroung-color', '#990000');
+                $this.css('color', '#990000');
+
+            });
+        
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <title>10 FAQs</title>
+    <link rel="stylesheet" href="/css/jquery_faq.css">
+<!--     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'> -->
+</head>
+<body>
+    
+    <h1>10 FAQs about National Parks</h1>
+    <dl>
+        <dt>Sequoia National Park</dt>
+        <dd class = "invisible">Is home to the largest living single-stem tree in the world - the wonderfully named General Sherman. The tree is approximately 275ft (84m) tall and weighs approximately 1,900 metric tonnes.</dd>
+        <dt>Denali National Park and Preserve, Alaska.</dt>
+        <dd class = "invisible">The highest point in North America is Mount McKinley (aka Denali) standing at 20,320ft (6193.5m).</dd> 
+        <dt>Badwater Basin in Death Valley</dt>
+        <dd class = "invisible">The parks are also home to the lowest point in the western hemisphere which is 282 ft (86m) below sea level.</dd>
+        <dt>Mammoth Cave National Park</dt>
+        <dd class = "invisible">The longest cave system in the world.Currently, there is more than 3454 miles of cave mapped, with more to come.</dd> 
+        <dt> Gates of the Arctic National Park and the Kobuk Valley National Park</dt>
+        <dd class = "invisible">Two national parks are located north of the Arctic Circle</dd>
+        <dt>Wrangell-St. Elias National Park</dt>
+        <dd class = "invisible">The largest park.It covers three climate zones.</dd> 
+        <dt>White Sands National Monument </dt>
+        <dd class = "invisible">More than 176,000 acres of New Mexico desert and contains the largest gypsum dune fields in the world.</dd>
+        <dt>Yellowstone, Wyoming</dt>
+        <dd class = "invisible">The oldest national park.</dd>
+        <dt>National Park of American Samoa</dt>
+        <dd class = "invisible"> the only National Park Service site south of the equator.</dd>
+        <dt>Florida Everglades</dt>
+        <dd class = "invisible">only true tropical forest in the northern hemisphere.</dd>
+    </dl>
+    <a href="#" id= "display-facts">Display fun facts for National Parks</a>
+   
+
+    <h3>Grand Canyon</h3>
+    <ul>
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
+
+    <h3>Florida Everglades</h3>
+    <ul>
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
+
+    <h3>Yellowstone</h3>
+    <ul>
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
+
+
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+        "use strict";
+
+    //this click on "display-facts" anchor tag event will display all definition "terms" that were previously hidden in CSS
+    $("#display-facts").click(function(event){
+        event.preventDefault();
+        //$("dd").toggleClass("invisible"); 
+        //$("dd").toggle();
+        //essentially this is the same as $("dd").toggleClass("invisible");
+        //$("dd").fadeToggle(); //this adds the fading effect for toggle
+        $("dd").slideToggle();
+    });
+
+
+    $("ul").each(function(index, element){
+        //ul is an element, each is refering to EACH element
+        $(element).children('li').first().css('font-weight', 'bold');
+        //each ul's first child of li font will be changed
+    });
+
+
+
+    //this click event on all "li" will now make them invisible and will only display the headers for each park. We focus on parent because the parent of "li" is "ul", so when targeting "parent", you make everything in that unordered list invisible 
+    // $("li").click(function(event){
+    //     event.preventDefault();
+    //     //$("li").parent().hide();
+    //     $("li").hide();
+    //     ////essentially this is the same as $("li").parent().hide();
+    // });
+
+
+    //this code is for when you click the h3 headers, the ul's children aka "li" will hide when clicked,, fade toggle
+    // var body = $('ul').fadeIn();
+    // $("h3").click(function(event){
+    //     event.preventDefault();
+    //     body.fadeToggle();
+    // });
+
+
+    // this uses slide toggle in click event
+    $("h3").click(function(event){
+        event.preventDefault();
+        $('li').slideToggle();
+    });
+
+</script>
+
+</body>
+</html>
