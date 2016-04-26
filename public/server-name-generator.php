@@ -1,8 +1,7 @@
  <?php
 
 
-
-
+//this is extracting the function so that I can echo 'combArray'....for this exercise its efficient but not really helpful because its a small amount of data we're handling but when we're adding more and more data this will become more useful and is in better practice
 
 function pageController() 
 {

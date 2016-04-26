@@ -1,6 +1,15 @@
 <?php
+function pageController() 
+{
+    $data = array();
+    $favorites = ['Sleeping ', 'Netflixing ', 'Eating ', 'Talking ', 'Browsing '];
 
-$favorites = ['Sleeping ', 'Netflixing ', 'Eating ', 'Talking ', 'Browsing '];
+    // the ['favorites'] in the square brackets is equal to the $favorites in the foreach loop because that is the key; HOWEVER the $favorites in the $data ['favorites'] = $favorites  is equal to the variable $favorites that has the 5 items in the array
+    $data['favorites' ] = $favorites;
+    return $data;
+}
+extract(pageController());
+
 
 ?>
 
@@ -16,11 +25,12 @@ $favorites = ['Sleeping ', 'Netflixing ', 'Eating ', 'Talking ', 'Browsing '];
 
 
 <table class="hobbies">
+
 <?php foreach ($favorites as $favoriteHobbies) { ?>
-    
-    <tr><td><?php echo $favoriteHobbies; ?></td></tr>
-    
+<!--short syntax is used for this next line of code where i replace < ?php echo with < ?= instead -->    
+        <tr><td><?= $favoriteHobbies; ?></td></tr>
 <?php } ?>
+
 </table>
 
 
