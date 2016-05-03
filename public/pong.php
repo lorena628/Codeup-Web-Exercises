@@ -1,11 +1,16 @@
 <?php
+//connecting to that file to call functions in THIS file
+require_once '/Input.php';
+
 function pageController()
 {
-    //the isset deals with the null issue where null is going to be set to zero if zero add to the count 
-    $count = !isset($_GET['count']) ? 0 : $_GET['count'];
+    //originally this included an isset but replaced with calling functions in functions.php     
+    $count = !Input::has('count') ? 0 : Input::get('count');
     return['count' => $count];
 }
 extract(pageController());
+$message= " YOU MISSED ";
+
 ?>
 
 <!DOCTYPE <!DOCTYPE html>
@@ -13,13 +18,18 @@ extract(pageController());
 <head>
     <meta charset="utf-8">
     <title>pong</title>
+    <link rel="stylesheet" href="/css/pong.css">
 </head>
 <body>
-<h1>pong</h1>
-<p><?= $count ?></p>
+    <h1>pong</h1>
+    <p><?= $count ?></p>
 
-<a href="ping.php?count=<?= $count + 1 ?>">Hit</a>
-<a href="ping.php?count=0">Miss</a>
+    <a href="ping.php?count=<?= $count + 1 ?>">Hit</a>
+    <a href="ping.php?count=0<?= $message ?>">Miss</a>
+
+<div>
+<img src="/img/pingpong.png">  
+</div>
 
 </body>
 </html>
