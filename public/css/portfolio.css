@@ -5,3 +5,57 @@
     border: 1px solid black;
     border-style: dotted;
 }
+ul {
+    list-style: square;
+    list-style-position: inside;
+}
+ol {
+    list-style-position: inside;
+}
+
+#career_goals2 {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#employers2{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-style: solid;
+
+}
+
+#skills2{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-style: solid;
+
+}
+
+#my_work2{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-style: solid;
+    
+}
+
+
+#references2{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-style: solid;
+ 
+}
+
+#contact_info2 {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-style: solid;
+
+}
