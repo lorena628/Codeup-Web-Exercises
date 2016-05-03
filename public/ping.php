@@ -1,10 +1,11 @@
 <?php
 //connecting to that file to call functions in THIS file
-require_once '/Input.php';
+require_once '../Input.php';
 
 function pageController()
 {
-    $count = !Input::has('count')  ? 0 : Input::get('count');
+    //originally this included an isset but replaced with calling functions in functions.php 
+    $count = !Input::has('count') ? 0 : Input::get('count');
     return['count' => $count];
 }
 extract(pageController());
