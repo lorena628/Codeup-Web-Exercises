@@ -1,15 +1,17 @@
 <?php
 session_start();
 
+require_once '../Auth.php';
+require_once '../Input.php';
 require_once 'functions.php';
 
 
-//this will reirect you to login.php if you are not logged in. isset is for the session and if logged_in_user is filled in properly
-if ( !isset($_SESSION['logged_in_user'])) {
+//this will reirect you to login.php if you are not logged in
+if ( !Auth::check()) {
     header('Location: login.php');
     exit();
   }
-$user= $_SESSION['logged_in_user'];
+$user= Auth::user();
 
 
 ?>
