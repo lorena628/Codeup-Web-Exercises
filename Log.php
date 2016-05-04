@@ -3,7 +3,8 @@ class Log
 {
     public $filename;
     public $handle;
-    public function __construct($prefix)
+    //prefix of Log and you'll see the log data
+    public function __construct($prefix="Log: ")
     {
         $currentDate = date('Y-m-d');
         $this->filename = $prefix . "log-{$currentDate}.log";

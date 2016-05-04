@@ -23,6 +23,7 @@ class Input
      */
     public static function get($key, $default = null)
     {
+        //use self becasue your calling its class of Input with ITS method of "has"....so self to replace $this
         return self::has($key) ? $_REQUEST[$key] : $default;
         // TODO: Fill in this function
     }

@@ -1,5 +1,5 @@
 <?php
-require_once 'Log.php'
+require_once 'Log.php';
 
 class Auth
 {
@@ -8,14 +8,16 @@ class Auth
 
     public static function attempt($username, $password)
     {
+        var_dump($username, $password);
         $log = new Log;
-        if($username == 'guest' && password_verify($password, self::$password) 
-        {
-            $_SESSION['logged_in_user']=$username;
-            $log->info('User $username is logged in.');
 
+        if($username == 'guest' && password_verify($password, self::$password)) {
+            $_SESSION['logged_in_user']=$username;
+            $log->info("User $username is logged in.");
+            return true;
         } else{
-            $log->error('User $username failed to log in.');
+            $log->error("User $username failed to log in.");
+            return false;
         }
 
     }
@@ -38,9 +40,7 @@ class Auth
         
         session_regenerate_id();
     }
-
 //review functions
-    
-
-
 }
+
+?>
