@@ -1,7 +1,4 @@
 .DS_Store
 db_credentials.php
 public/img/
-public/contactinfo.php
-public/footer.php
-public/header.php
-public/home.php
+public/aboutme.php
