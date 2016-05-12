@@ -20,10 +20,10 @@
     }
    
     #home {
-        padding-top: .30em;
-        height: 3em;
+        padding-top: .4em;
+        height: 2.9em;
         width: 2.8em;
-        margin-right: 13em;
+        margin-right: 12em;
     }
 </style>
 </head>

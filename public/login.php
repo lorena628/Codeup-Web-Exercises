@@ -7,7 +7,7 @@ require_once '../Auth.php';
 require_once '../Input.php';
 
 //checking FIRST if the user is logged in and if so will redirect to the authorization page
-if ( isset($_SESSION['logged_in_user'])) {
+if (Auth::check()) {
     header('Location: authorized.php');
     exit();
   }

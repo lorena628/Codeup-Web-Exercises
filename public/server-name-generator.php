@@ -47,10 +47,6 @@ extract(pageController());
 // $combArray     = $adjectives[$randAdj] . " " . $nouns[$randNoun];
 // ////will spit out rand index so we need to access element at that index and will give rand array ele
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,3 +79,8 @@ extract(pageController());
 </script>
 </body>
 </html>
+
+
+
+
+
