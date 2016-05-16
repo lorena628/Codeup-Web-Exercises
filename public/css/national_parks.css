@@ -1,0 +1,42 @@
+h1, #links, table, th {
+    text-align: center
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+#header {
+    color: white;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(/img/mount_misty.gif); 
+}
+.table{
+    /*color: #F0F8F7;*/
+    border-style: hidden;
+    font-size: 18px;
+    background-color: rgb(242,245,239);
+}
+th {
+    text-decoration: underline;
+}
+#links {
+    background-color: rgb(60,64,77);
+    color: white;
+    margin-top: -20px;
+    padding-top: 2%;
+    padding-bottom: 14%;
+    /*padding-bottom: 9.12%;*/
+    font-size: 1.8em;
+}
+.fa-arrow-right, .fa-arrow-left{
+    color:white;
+}
+
+#bttn, #add_bttn {
+        text-align: center;
+        border: hidden;
+        outline:none;
+        background-color: transparent; 
+}
