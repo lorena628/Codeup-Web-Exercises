@@ -12,7 +12,14 @@ function pageController($dbc)
     $data['page'] = Input::has('page') ? Input::get('page') : 1; 
 
     $offset = ($data['page'] - 1) * 4; 
-
+    // query is getting count of however many rows in national parks database then needs to be EXECUTED
+    $stmt = $dbc->prepare ("SELECT count (*) FROM national_parks") ;
+    $stmt->execute(); 
+    //this $pagecount is fetching column and variable is ser
+    $pagecount = $stmt->fetchColumn ();
+    //being put into a number that will be divided by 4 for the purpose of showing 4 at a time
+    $pages = ceil ($pagecount / 4);
+    $data['pages'] = $pages;
     $stmt = $dbc->prepare('SELECT * FROM national_parks LIMIT :lim OFFSET :off ');
     $stmt->bindValue(":lim", 4, PDO::PARAM_INT);
     $stmt->bindValue(":off", $offset, PDO::PARAM_INT);
@@ -63,12 +70,14 @@ extract(pageController($dbc));
 <div id= links>
 
     <?php if($page>=2): ?> 
+        <!-- this is previous page -->
         <a href="?page=<?= $page - 1 ?>"><i class="fa fa-arrow-left  fa-1x" aria-hidden="true"></i></a>
     <?php endif; ?>
 
         <?= "Page: $page" ?>
 
-    <?php if($page <= count($parks) ): ?>
+    <?php if($page < $pages ): ?>
+        <!-- this is adding a page -->
         <a href="?page=<?= $page + 1 ?>"><i class="fa fa-arrow-right  fa-1x" aria-hidden="true"></i></a>
     <?php endif; ?>
 
