@@ -6,7 +6,6 @@ require_once '../Input.php';
 function pageController($dbc)
 {
     $data = [];
-
     $data['page'] = Input::has('page') ? Input::get('page') : 1; 
 
     $offset = ($data['page'] - 1) * 4; 
@@ -50,7 +49,6 @@ extract(pageController($dbc));
                 <th class="col-md-2">Date Established</th>
                 <th class="col-md-2">Area in Acres</th>
                 <th class="col-md-4">Description</th>
-
             </tr>
 
             <?php foreach($parks as $park) : ?>
@@ -77,9 +75,7 @@ extract(pageController($dbc));
     <?php endif; ?>
 
     <p><input type="button" id="add_bttn" onclick="location.href='add_a_park.php';" value="Add a Park!" /></p>
-    
 </div>
  <!--    <img id="tree" src="/img/tree.png">   -->
 </body>
 </html>
-
