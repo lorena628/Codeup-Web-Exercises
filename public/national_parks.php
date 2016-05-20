@@ -3,8 +3,6 @@ require_once '../db_credentials.php';
 require_once '../db_connect.php';
 require_once '../Input.php';
 
-
-
 function pageController($dbc)
 {
     $data = [];
@@ -47,11 +45,11 @@ extract(pageController($dbc));
 <div>
     <table class="table">
             <tr>
-                <th class="col-md-3">Name</th>
-                <th class="col-md-3">Location</th>
-                <th class="col-md-1">Date Established</th>
+                <th class="col-md-2">Name</th>
+                <th class="col-md-2">Location</th>
+                <th class="col-md-2">Date Established</th>
                 <th class="col-md-2">Area in Acres</th>
-                <th class="col-md-3">Description</th>
+                <th class="col-md-4">Description</th>
 
             </tr>
 
@@ -64,11 +62,8 @@ extract(pageController($dbc));
             <?php endforeach; ?>
     </table>
 </div>
-<?= Input::get('name'); ?>
-
-    
+<!-- < ?= Input::get('name'); ?>-->
 <div id= links>
-
     <?php if($page>=2): ?> 
         <!-- this is previous page -->
         <a href="?page=<?= $page - 1 ?>"><i class="fa fa-arrow-left  fa-1x" aria-hidden="true"></i></a>
@@ -84,9 +79,6 @@ extract(pageController($dbc));
     <p><input type="button" id="add_bttn" onclick="location.href='add_a_park.php';" value="Add a Park!" /></p>
     
 </div>
-
-
-
  <!--    <img id="tree" src="/img/tree.png">   -->
 </body>
 </html>
