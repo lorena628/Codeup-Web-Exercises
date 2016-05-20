@@ -3,6 +3,7 @@ class Model
 {
     // Array to store our key/value data
     private $attributes = array();
+    protected static $table;
 
     // Magic setter to populate $attributes array
     public function __set($name, $value)
@@ -20,11 +21,11 @@ class Model
     }
 
 
-    protected static $table;
 
     public static function getTableName()
     {
-        return self::$table;
+        // static users will come up but self keyword will refer to the model class or base class  static is child and self is the base or parent  class 
+        return static::$table;
     }
 
 }
