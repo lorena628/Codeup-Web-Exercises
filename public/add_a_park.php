@@ -53,8 +53,6 @@ $errors = [];
 if(!empty($_POST)) {
 extract(pageController($dbc));
 }
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,11 +97,11 @@ extract(pageController($dbc));
     <?php endforeach; ?></div>
 
     <form method="POST" >
-        <input class="forms" type="text" name="name" placeholder="Name"><br>
-        <input class="forms" type="text" name="location" placeholder="Location"><br>
-        <input class="forms" type="text" name="date_established" placeholder="Established (YYYY)"><br>
-        <input class="forms" type="text" name="area_in_acres" placeholder="Area in Acres"><br>
-        <input class="forms" type="text" name="description" maxlength="100" placeholder="Brief Description"><br>
+        <input class="forms" type="text" name="name" placeholder="Name" value="<?php if(!empty($error)){echo Input::get('name');} ?>"><br>
+        <input class="forms" type="text" name="location" placeholder="Location" value="<?php if(!empty($error)){echo Input::get('location');} ?>"><br>
+        <input class="forms" type="text" name="date_established" placeholder="Established (YYYY)" value="<?php if(!empty($error)){echo Input::get('date_established');} ?>"><br>
+        <input class="forms" type="text" name="area_in_acres" placeholder="Area in Acres" value="<?php if(!empty($error)){echo Input::get('area_in_acres');} ?>"><br>
+        <input class="forms" type="text" name="description" maxlength="100" placeholder="Brief Description" value="<?php if(!empty($error)){echo Input::get('description');} ?>"><br>
         <input class="forms" id="btn_sub"  type="submit" value="Submit">
     </form>
     <p><input type="button" id="add_bttn" onclick="location.href='national_parks.php';" value="Return to Database"></p>
