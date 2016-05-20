@@ -28,6 +28,37 @@ class Input
         // TODO: Fill in this function
     }
 
+
+
+    // cam said maybe to do a check because when i fill out form and put numbers instead for Name where it should be a string it is // being submitted either way. so we need to add a check to see if the characters are actual letters but my string function is
+    // correct overall 
+    public static function getString($key) 
+    {   
+        $value = self::get($key);
+
+        if (self::get($value)==null){
+            throw new Exception ("All inputs must be filled");
+        }
+        if (!is_string($value) || is_numeric($key)) {
+            throw new Exception ("$key must be a string ");
+        } else {
+            return $value;
+        }
+    }
+    
+    public static function getNumber($key)
+    {
+        $value = self::get($key);
+        if (self::get($value)==null){
+            throw new Exception ("All inputs must be filled");
+        }
+        if(!is_int($value)) {
+            throw new Exception (" $key must be a number");
+        }
+        return $value;
+    }
+
+
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //
     // The Input class should not ever be instantiated, so we prevent the    //
