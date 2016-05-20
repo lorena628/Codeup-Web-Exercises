@@ -4,6 +4,8 @@ require_once '../db_connect.php';
 require_once '../Input.php';
 
 
+$message = "";
+
 if(Input::get('name') != "" && Input::get('location') && Input::get('date_established') && Input::get('area_in_acres') && Input::get('description')) {
 
     $stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
@@ -15,6 +17,9 @@ if(Input::get('name') != "" && Input::get('location') && Input::get('date_establ
         $stmt->bindValue(':description', Input::get('description'), PDO::PARAM_STR);
 
     $stmt->execute();
+$message= " Form Submitted ";
+}else{
+    $message = " Please Fill all Fields";
 }
 
 
@@ -30,6 +35,7 @@ if(Input::get('name') != "" && Input::get('location') && Input::get('date_establ
 </head>
     <style>
         body {
+            /*color: white;*/
             text-align: center;
             background-color: rgb(60,64,77);
         }
@@ -47,19 +53,22 @@ if(Input::get('name') != "" && Input::get('location') && Input::get('date_establ
         .forms {
             margin-bottom: 1%;
         }
+        #message{
+            color: white;
+        }
     </style>
 <body>
 <h1>Enter Park Information</h1>
-    <form method="POST">
+<div id="message"><p><?= $message ?></p></div>
+
+    <form method="POST" >
         <input class="forms" type="text" name="name" placeholder="Name"><br>
         <input class="forms" type="text" name="location" placeholder="Location"><br>
-        <input class="forms" type="text" name="date_established" placeholder="Year Established"><br>
+        <input class="forms" type="text" name="date_established" placeholder="Established (YYYY)"><br>
         <input class="forms" type="text" name="area_in_acres" placeholder="Area in Acres"><br>
-        <input class="forms" type="text" name="description" placeholder="Description (100 characters or less)"><br>
-        <input class="forms" id="btn_sub" onclick="location.href='national_parks.php';" type="submit" value="add">
+        <input class="forms" type="text" name="description" maxlength="100" placeholder="Brief Description"><br>
+        <input class="forms" id="btn_sub" onclick="location.href='national_parks.php';" type="submit" value="Submit">
     </form>
-    <p><input type="button" id="add_bttn" onclick="location.href='national_parks.php';" value="Return"></p>
-<!--     <p><input class="forms" id="btn_sub" type="button" onclick=" location.href='national_parks.php';" value="Return to National Parks"></input></p>
- -->
+    <p><input type="button" id="add_bttn" onclick="location.href='national_parks.php';" value="Return to Database"></p>
 </body>
 </html>
