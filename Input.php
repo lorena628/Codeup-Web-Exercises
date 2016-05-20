@@ -36,10 +36,10 @@ class Input
     {   
         $value = self::get($key);
 
-        if (self::get($value)==null){
+        if (self::get($key)==null){
             throw new Exception ("All inputs must be filled");
         }
-        if (!is_string($value) || is_numeric($key)) {
+        if (!is_string($value) || is_numeric($value)) {
             throw new Exception ("$key must be a string ");
         } else {
             return $value;
@@ -49,11 +49,11 @@ class Input
     public static function getNumber($key)
     {
         $value = self::get($key);
-        if (self::get($value)==null){
+        if (self::get($key)==null){
             throw new Exception ("All inputs must be filled");
         }
-        if(!is_int($value)) {
-            throw new Exception (" $key must be a number");
+        if(!is_numeric($value)) {
+            throw new Exception ("$key must be a number");
         }
         return $value;
     }
