@@ -3,23 +3,55 @@ require_once '../db_credentials.php';
 require_once '../db_connect.php';
 require_once '../Input.php';
 
+function pageController($dbc)
+{
+    $errors=[];
+    //this is the try catch exception errors and will display erroers yet will keep runnung and display a message while trying to run
+    try {
+        $name = Input::getString('name');
+    }   catch (Exception $e) {
+        $errors[]= $e->getMessage();
+    }
+      try {
+        $location = Input::getString('location');
+    }   catch (Exception $e) {
+        $errors[]=$e->getMessage();
+    }
+      try {
+        $dateEstablished = Input::getNumber('date_established');
+    }   catch (Exception $e) {
+        $errors[]=$e->getMessage();
+    }
+      try {
+        $area = Input::getNumber('area_in_acres');
+    }   catch (Exception $e) {
+        $errors[]=$e->getMessage();
+    }
+      try {
+        $description = Input::getString('description');
+    }   catch (Exception $e) {
+        $errors[]=$e->getMessage();
+    }
 
-$message = "";
+    if(Input::get('name') != "" && Input::get('location') && Input::get('date_established') && Input::get('area_in_acres') && Input::get('description') && empty($errors)) {
+            $stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
 
-if(Input::get('name') != "" && Input::get('location') && Input::get('date_established') && Input::get('area_in_acres') && Input::get('description')) {
+                $stmt->bindValue(':name', Input::get('name'), PDO::PARAM_STR);
+                $stmt->bindValue(':location', Input::get('location'),  PDO::PARAM_STR);
+                $stmt->bindValue(':date_established', Input::get('date_established'), PDO::PARAM_INT);
+                $stmt->bindValue(':area_in_acres', Input::get('area_in_acres'), PDO::PARAM_INT);
+                $stmt->bindValue(':description', Input::get('description'), PDO::PARAM_STR);
 
-    $stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
+            $stmt->execute();
+            header("location: national_parks.php");
+            die();
+    }
+    return ['errors'=>$errors];
+}
 
-        $stmt->bindValue(':name', Input::get('name'), PDO::PARAM_STR);
-        $stmt->bindValue(':location', Input::get('location'),  PDO::PARAM_STR);
-        $stmt->bindValue(':date_established', Input::get('date_established'), PDO::PARAM_INT);
-        $stmt->bindValue(':area_in_acres', Input::get('area_in_acres'), PDO::PARAM_INT);
-        $stmt->bindValue(':description', Input::get('description'), PDO::PARAM_STR);
-
-    $stmt->execute();
-$message= " Form Submitted ";
-}else{
-    $message = " Please Fill all Fields";
+$errors = [];
+if(!empty($_POST)) {
+extract(pageController($dbc));
 }
 
 
@@ -51,6 +83,7 @@ $message= " Form Submitted ";
             text-align: center;
         }
         .forms {
+            color: black;
             margin-bottom: 1%;
         }
         #message{
@@ -59,7 +92,11 @@ $message= " Form Submitted ";
     </style>
 <body>
 <h1>Enter Park Information</h1>
-<div id="message"><p><?= $message ?></p></div>
+<div id="message">
+
+    <?php foreach($errors as $error) : ?>
+        <p><?= $error ?></p>
+    <?php endforeach; ?></div>
 
     <form method="POST" >
         <input class="forms" type="text" name="name" placeholder="Name"><br>
@@ -67,7 +104,7 @@ $message= " Form Submitted ";
         <input class="forms" type="text" name="date_established" placeholder="Established (YYYY)"><br>
         <input class="forms" type="text" name="area_in_acres" placeholder="Area in Acres"><br>
         <input class="forms" type="text" name="description" maxlength="100" placeholder="Brief Description"><br>
-        <input class="forms" id="btn_sub" onclick="location.href='national_parks.php';" type="submit" value="Submit">
+        <input class="forms" id="btn_sub"  type="submit" value="Submit">
     </form>
     <p><input type="button" id="add_bttn" onclick="location.href='national_parks.php';" value="Return to Database"></p>
 </body>
