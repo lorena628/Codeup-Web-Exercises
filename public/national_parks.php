@@ -7,7 +7,6 @@ function pageController($dbc)
 {
     $data = [];
     $data['page'] = Input::has('page') ? Input::get('page') : 1; 
-
     $offset = ($data['page'] - 1) * 4; 
     // query is getting count of however many rows in national parks database then needs to be EXECUTED
     $stmt = $dbc->prepare ("SELECT count (*) FROM national_parks") ;
@@ -52,11 +51,13 @@ extract(pageController($dbc));
             </tr>
 
             <?php foreach($parks as $park) : ?>
-                <tr><td><?= $park['name']; ?></td>
-                <td><?= $park['location']; ?></td>
-                <td><?= $park['date_established']; ?></td>
-                <td><?= $park['area_in_acres']; ?></td>
-                <td><?= $park['description']; ?></td></tr>
+                <tr>
+                    <td><?= $park['name']; ?></td>
+                    <td><?= $park['location']; ?></td>
+                    <td><?= $park['date_established']; ?></td>
+                    <td><?= $park['area_in_acres']; ?></td>
+                    <td><?= $park['description']; ?></td>
+                </tr>
             <?php endforeach; ?>
     </table>
 </div>
