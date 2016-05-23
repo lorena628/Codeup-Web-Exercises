@@ -32,28 +32,56 @@ class Input
 
     // cam said maybe to do a check because when i fill out form and put numbers instead for Name where it should be a string it is // being submitted either way. so we need to add a check to see if the characters are actual letters but my string function is
     // correct overall 
-    public static function getString($key) 
+    public static function getString($key, $min=2, $max=500) 
     {   
         $value = self::get($key);
 
+        //If $key is not a string, or $min & $max are not numbers, throw an InvalidArgumentException.
+        if(!is_string($key) || !is_numeric($min) || !is_numeric($max)) {
+            throw new InvalidArgumentException("Must be a string or must be numeric");
+        }
+
+        //If the requested key is missing from the input,
         if (self::get($key)==null){
-            throw new Exception ("All inputs must be filled");
+            throw new OutOfRangeException("All inputs must be filled");
         }
+
+        //If a string is shorter than $min or longer than $max
+        if(strlen($value) <  $min || strlen($value) > $max) {
+            throw new LengthException ("Text input did not meet length extentions");
+        }
+
+        //If the value is the wrong type
         if (!is_string($value) || is_numeric($value)) {
-            throw new Exception ("$key must be a string ");
-        } else {
-            return $value;
+            throw new DomainException ("$key must be a string ");
         }
+            return $value;
     }
     
-    public static function getNumber($key)
+
+
+    public static function getNumber($key, $min=1, $max=500)
     {
         $value = self::get($key);
-        if (self::get($key)==null){
-            throw new Exception ("All inputs must be filled");
-        }
+
+        //if input is not a number
         if(!is_numeric($value)) {
-            throw new Exception ("$key must be a number");
+            throw new InvalidArgumentException("Must be a number");
+        }
+
+        //If the value is the wrong type
+        if(!is_numeric($min) || !is_numeric($max)) {
+            throw new DomainException ("$key must be a number");
+        }
+
+        //If the requested key is missing from the input,
+        if(self::get($key)==null){
+            throw new OutOfRangeException ("All inputs must be filled");
+        }
+
+        //If a numeric input  is shorter than $min or longer than $max
+        if(is_numeric($value) < is_numeric ($min) || is_numeric($value) > is_numeric($max)) {
+            throw new LengthException ("Numeric input did not meet length extentions");
         }
         return $value;
     }
