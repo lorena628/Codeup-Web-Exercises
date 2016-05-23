@@ -9,29 +9,69 @@ function pageController($dbc)
     //this is the try catch exception errors and will display erroers yet will keep runnung and display a message while trying to run
     try {
         $name = Input::getString('name');
-    }   catch (Exception $e) {
+    }   catch (InvalidArgumentException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (OutOfRangeException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (LengthException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (DomainException $e) {
         $errors[]= $e->getMessage();
     }
+
       try {
         $location = Input::getString('location');
-    }   catch (Exception $e) {
-        $errors[]=$e->getMessage();
+    }   catch (InvalidArgumentException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (OutOfRangeException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (LengthException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (DomainException $e) {
+        $errors[]= $e->getMessage();
     }
+
       try {
         $dateEstablished = Input::getNumber('date_established');
-    }   catch (Exception $e) {
-        $errors[]=$e->getMessage();
+    }   catch (InvalidArgumentException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (OutOfRangeException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (LengthException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (DomainException $e) {
+        $errors[]= $e->getMessage();
     }
+
       try {
         $area = Input::getNumber('area_in_acres');
-    }   catch (Exception $e) {
-        $errors[]=$e->getMessage();
+    }   catch (InvalidArgumentException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (OutOfRangeException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (LengthException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (DomainException $e) {
+        $errors[]= $e->getMessage();
     }
+
       try {
         $description = Input::getString('description');
-    }   catch (Exception $e) {
-        $errors[]=$e->getMessage();
+   }   catch (InvalidArgumentException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (OutOfRangeException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (LengthException $e) {
+        $errors[]= $e->getMessage();
+    }   catch (DomainException $e) {
+        $errors[]= $e->getMessage();
     }
+
+
+
+
+
+
 
     if(Input::get('name') != "" && Input::get('location') && Input::get('date_established') && Input::get('area_in_acres') && Input::get('description') && empty($errors)) {
             $stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
