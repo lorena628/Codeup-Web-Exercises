@@ -67,12 +67,6 @@ function pageController($dbc)
         $errors[]= $e->getMessage();
     }
 
-
-
-
-
-
-
     if(Input::get('name') != "" && Input::get('location') && Input::get('date_established') && Input::get('area_in_acres') && Input::get('description') && empty($errors)) {
             $stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
 
