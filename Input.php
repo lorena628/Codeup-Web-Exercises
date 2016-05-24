@@ -55,7 +55,7 @@ class Input
         if (!is_string($value) || is_numeric($value)) {
             throw new DomainException ("$key must be a string ");
         }
-            return $value;
+        return $value;
     }
     
 
